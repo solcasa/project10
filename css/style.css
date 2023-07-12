@@ -1,0 +1,355 @@
+* {
+    outline: 1px solid tomato--;
+}
+
+
+:root {
+    --wc: #ffffff;
+    --bc: #000000;
+    --gc: rgb(128, 128, 128);
+}
+
+
+
+/* header=================================================================== */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+
+    transition: 0.5s;
+}
+
+.header.on {
+    background: var(--wc);
+    border-bottom: 1px solid rgb(229, 229, 229);
+}
+
+.header .header_wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100rem;
+}
+
+.header h1 {
+    font-size: 0;
+}
+
+.header h1 img {
+    filter: invert();
+}
+
+.header.on h1 img {
+    filter: invert(0%);
+}
+
+.gnb .main_menu {
+    display: flex;
+}
+
+.gnb .main_menu>li {
+    position: relative;
+    padding: 0 30rem;
+}
+
+.header .gnb .main_menu a {
+    display: block;
+    color: var(--wc);
+    font-size: 16rem;
+}
+
+.header.on .gnb .main_menu a {
+    color: var(--gc);
+}
+
+.gnb .main_menu .sub_menu {
+    position: absolute;
+    top: 100rem;
+    left: 50%;
+    transform: translate(-50%, 0);
+    background: var(--wc);
+    width: 200rem;
+    text-align: center;
+
+    padding: 15rem 0;
+    border-radius: 8px;
+    border: 2px solid var(--lc);
+    box-shadow: rgba(38, 45, 57, 0.16) 0px 4px 16px;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: 0.5s;
+}
+
+.gnb .main_menu>li:hover .sub_menu {
+    top: 60rem;
+    opacity: 1;
+    visibility: visible;
+}
+
+.header.on .gnb .main_menu>li:hover .sub_menu {
+    top: 70rem;
+}
+
+.gnb .sub_menu li~li {
+    border-top: 1px solid var(--lc);
+}
+
+.header .gnb .sub_menu a {
+    display: block;
+    color: var(--gc);
+    font-size: 14rem;
+    line-height: 40rem;
+}
+
+
+
+/* main_visual */
+.main_visual {
+    position: relative;
+    height: 100vh;
+}
+
+.main_visual video {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
+
+.main_visual .slogan {
+    position: absolute;
+    top: 30%;
+    left: 170rem;
+    transform: translate(22%, 20%);
+
+    font-size: 100rem;
+    font-weight: 700;
+    line-height: 1.1;
+    color: rgb(255, 205, 0);
+    font-family: 'Montserrat', sans-serif;
+}
+
+.main_visual p {
+    position: absolute;
+    bottom: 20%;
+    left: 80rem;
+    transform: translate(37%, 20%);
+    font-size: 30rem;
+    line-height: 1.2;
+    color: var(--wc);
+}
+
+.main_visual h2 {
+    position: absolute;
+    bottom: 50%;
+    right: 260rem;
+    transform: translate(10%, 0);
+
+
+    color: var(--wc);
+    text-align: right;
+
+    font-size: 30rem;
+    font-weight: 700;
+    margin: 0 0 20rem 0;
+}
+
+
+.main_visual .km_num {
+    position: absolute;
+    bottom: 42%;
+    right: 330rem;
+    transform: translate(10%, 0);
+
+
+    color: var(--wc);
+    text-align: right;
+}
+
+
+.main_visual .km_num .memberCountCon {
+    font-size: 80rem;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.main_visual span {
+    position: absolute;
+    bottom: 43%;
+    right: 275rem;
+    transform: translate(80%, 10%);
+
+    color: var(--wc);
+    font-size: 40rem;
+    font-weight: 700;
+}
+
+
+
+/* main_content */
+.main_content .content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.main_content .content .story_txt {
+    margin: 140rem auto;
+}
+
+.main_content .content .story_txt strong {
+    display: block;
+    font-size: 40rem;
+    font-weight: 700;
+    line-height: 46rem;
+    margin: 0 0 24rem 0;
+}
+
+.main_content .content .story_txt p {
+    font-size: 20rem;
+    font-weight: 400;
+    line-height: 30rem;
+    margin: 0 0 30rem 0;
+    color: var(--gc);
+}
+
+.main_content .content .story_txt span {
+    display: block;
+    font-size: 20rem;
+    font-weight: 500;
+}
+
+.main_content .content .story_txt span a:hover {
+    color: #FFCD00;
+}
+
+.main_content .content .story_txt span i {
+    margin: 0 0 0 5px;
+}
+
+.main_content .content .story_video video,
+.main_content .content .story_pic img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+
+
+/* main_banner */
+.main_banner {
+    height: 800rem;
+    background: url(../images/kakaocars_icon.png) no-repeat bottom right 20%;
+    background-size: 70%;
+    background-color: rgb(30, 35, 61);
+}
+
+.main_banner .banner_tit {
+    font-size: 40rem;
+    font-weight: 700;
+    width: 550rem;
+    color: var(--wc);
+    line-height: 1.4;
+    margin: 0 0 0 230rem;
+    padding: 100rem 0;
+
+    word-break: keep-all;
+    overflow-wrap: break-word;
+
+}
+
+.main_banner .banner_tit strong {
+    color: #FFCD00;
+    display: block;
+}
+
+.main_banner span {
+    display: block;
+    font-size: 18rem;
+    font-weight: 500;
+    color: var(--wc);
+
+    margin: 0 0 0 230rem;
+}
+
+.main_banner span:hover {
+    color: #FFCD00;
+}
+
+
+
+/* main_event */
+.main_event {
+    position: relative;
+}
+
+.main_event video {
+    width: 100%;
+    object-fit: cover;
+    vertical-align: middle;
+    /* 먼가 틈이 생길때!! */
+}
+
+.main_event .banner_tit {
+    position: absolute;
+    top: 250rem;
+    left: 230rem;
+    color: var(--wc);
+}
+
+.main_event .banner_tit h3 {
+    font-size: 30rem;
+    font-weight: 700;
+    line-height: 46rem;
+    margin: 0 0 30rem 0;
+}
+
+.main_event .banner_tit strong {
+    display: block;
+    margin: 0 0 30rem 0;
+}
+
+.main_event .banner_tit span {
+    display: block;
+}
+
+
+
+/* footer */
+.footer {
+    background: var(--bc);
+    color: var(--wc);
+}
+
+.footer .ft_top {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 60rem;
+    color: rgba(255, 255, 255, 0.6);
+    padding: 70rem 0;
+}
+
+.footer .ft_top h3 {
+    color: var(--wc);
+    font-size: 18rem;
+    font-weight: 500;
+    margin: 0 0 20rem 0;
+}
+
+.footer .ft_top li {
+    margin: 0 0 10rem 0;
+}
+
+.footer .ft_top li a {
+    font-size: 14rem;
+}
+
+.footer .ft_btm {
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    text-align: center;
+    font-size: 14rem;
+    padding: 30rem;
+}
