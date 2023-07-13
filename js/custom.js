@@ -27,4 +27,22 @@ $(function () {
         return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     }
 
+
+    $('.mobile_btn').on('click', function () {
+        $(this).toggleClass('on');
+        $('.header').toggleClass('on');
+        $('.gnb').toggleClass('on');
+    });
+
+    $('.gnb>ul>li>a').on('click', function (e) {
+        e.preventDefault();
+        $(this).next().stop().slideDown();
+        $(this).parent().siblings().find('.sub_menu').slideUp();
+    });
+
+    $(window).on('resize', function () {
+        $('.gnb .sub_menu').removeAttr('style');
+
+    });
+
 });

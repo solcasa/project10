@@ -1,6 +1,7 @@
 * {
-    outline: 1px solid tomato--;
+    outline: 1px solid tomato;
 }
+
 
 
 :root {
@@ -9,14 +10,20 @@
     --gc: rgb(128, 128, 128);
 }
 
+@media (max-width: 768px) {
+    html {
+        font-size: 0.25641025641vw;
+    }
+}
 
-/* header=================================================================== */
+
+/* header==================================================================*/
 .header {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    z-index: 1000;
+    z-index: 999;
 
     transition: 0.5s;
 }
@@ -111,14 +118,14 @@
 }
 
 
-/* header_mobile */
+/* header_mobile=============================================================== */
 @media (max-width: 768px) {
     .header {
         position: fixed;
         top: 0;
         left: 0;
         right: 0;
-        z-index: 1000;
+        z-index: 999;
 
         transition: 0.5s;
     }
@@ -132,6 +139,8 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        height: 100rem;
+
         /* r */
         height: 56rem;
     }
@@ -141,6 +150,7 @@
         /* r */
         position: fixed;
         z-index: 1000;
+        padding: 0 0 0 10rem;
     }
 
     .header h1 img {
@@ -149,8 +159,31 @@
         height: 17rem;
     }
 
+    .header .gnb.on .main_menu a {
+        color: #000000;
+    }
+
     .header.on h1 img {
         filter: invert(0%);
+    }
+
+    .header.on .mobile_btn {
+        background: var(--bc);
+        border-radius: 2px;
+    }
+
+    /* r */
+    .gnb {
+        position: fixed;
+        inset: 0 100% 0 auto;
+        background: var(--wc);
+        width: 100%;
+
+        transition: 0.5s;
+    }
+
+    .gnb.on {
+        inset: 0 0 0 auto;
     }
 
     .gnb .main_menu {
@@ -158,22 +191,15 @@
         /* r */
         flex-direction: column;
         gap: 0;
-        padding: 150px 30px 0 30px;
+        padding: 150rem 20rem 0 20rem;
     }
 
     .gnb .main_menu>li {
         position: relative;
         padding: 0 30rem;
-    }
-
-    /* r */
-    .header .gnb {
-        position: fixed;
-        inset: 0 auto 0 100%;
-        background: var(--wc);
-        width: 100%;
-
-        transition: 0.5s;
+        /* r */
+        border-bottom: 1px solid #ddd;
+        line-height: 40rem;
     }
 
     .header .gnb .main_menu a {
@@ -184,27 +210,32 @@
     }
 
     .header.on .gnb .main_menu a {
-        color: var(--gc);
+        /* r */
+        color: var(--bc);
     }
 
     .gnb .main_menu .sub_menu {
-        position: absolute;
-        top: 100rem;
-        left: 50%;
-        transform: translate(-50%, 0);
+        /* r */
+        /* position: absolute; */
+        position: static;
+        padding: 0 0 0 0;
+
+        top: 0;
+        left: 0;
+        transform: translate(0, 0);
         background: var(--wc);
-        width: 200rem;
-        text-align: center;
+        width: auto;
+        text-align: left;
 
         padding: 15rem 0;
-        border-radius: 8px;
-        border: 2px solid var(--lc);
-        box-shadow: rgba(38, 45, 57, 0.16) 0px 4px 16px;
+        border-radius: none;
+        border: none;
+        box-shadow: none;
 
-        opacity: 0;
-        visibility: hidden;
+        opacity: 1;
+        visibility: visible;
 
-        transition: 0.5s;
+        transition: none;
     }
 
     .gnb .main_menu>li:hover .sub_menu {
@@ -228,11 +259,90 @@
         line-height: 40rem;
     }
 
+    /* r */
     .mobile_btn {
-        /* r */
         display: block;
+
+        position: fixed;
+        top: 15rem;
+        right: 15rem;
+        z-index: 999;
+
+        width: 30rem;
+        height: 30rem;
+
+
+    }
+
+    .mobile_btn::before {
+        content: "";
+        position: absolute;
+        top: 7rem;
+        left: 5rem;
+        right: 5rem;
+        height: 2rem;
+        background: var(--wc);
+    }
+
+    .mobile_btn::after {
+        content: "";
+        position: absolute;
+        bottom: 7rem;
+        left: 5rem;
+        right: 5rem;
+        height: 2rem;
+        background: var(--wc);
+    }
+
+    .mobile_btn.on::before {
+        display: none;
+    }
+
+    .mobile_btn.on::after {
+        display: none;
+    }
+
+    .mobile_btn button {
+        border: none;
+        background: transparent;
+        outline: none;
+    }
+
+    .mobile_btn button::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 5rem;
+        right: 5rem;
+        height: 2rem;
+        background: var(--wc);
+        transform: translate(0, -50%);
+        transition: 0.5s;
+    }
+
+    .mobile_btn button::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 5rem;
+        right: 5rem;
+        height: 2rem;
+        background: var(--wc);
+        transform: translate(0, -50%);
+        transition: 0.5s;
+    }
+
+    .mobile_btn.on button::before {
+        transform: translate(0, -50%) rotate(45deg);
+    }
+
+    .mobile_btn.on button::after {
+        transform: translate(0, -50%) rotate(-225deg);
     }
 }
+
+
+
 
 /* main_visual */
 .main_visual {
@@ -246,20 +356,8 @@
     object-fit: cover;
 }
 
-@media (max-width: 768px) {
-    .main_visual .main_pc_v {
-        display: none;
-    }
-}
-
 .main_visual .main_mobile_v {
     display: none;
-}
-
-@media (max-width: 768px) {
-    .main_visual .main_mobile_v {
-        display: block;
-    }
 }
 
 .main_visual .slogan {
@@ -300,7 +398,6 @@
     margin: 0 0 20rem 0;
 }
 
-
 .main_visual .km_num {
     position: absolute;
     bottom: 42%;
@@ -311,7 +408,6 @@
     color: var(--wc);
     text-align: right;
 }
-
 
 .main_visual .km_num .memberCountCon {
     font-size: 80rem;
@@ -330,6 +426,110 @@
     font-weight: 700;
 }
 
+
+/* main_visual_mobile=============================================================== */
+@media (max-width: 768px) {
+    .main_visual {
+        position: relative;
+        height: 100vh;
+
+        /* r */
+        min-height: 216.4vw;
+    }
+
+    .main_visual .main_pc_v {
+        /* r */
+        display: none;
+    }
+
+    .main_visual .main_mobile_v {
+        /* r */
+        display: block;
+
+        position: absolute;
+        height: 100%;
+        width: 46.21vh;
+        min-width: 100%;
+        min-height: 216.4vw;
+        max-height: 100vh;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        margin: 0px;
+    }
+
+    .main_visual .slogan {
+        position: absolute;
+        top: 30%;
+        /* r */
+        left: 0;
+        transform: translate(10%, 20%);
+        font-size: 60rem;
+        font-weight: 700;
+        line-height: 1.1;
+        color: rgb(255, 205, 0);
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    .main_visual p {
+        position: absolute;
+        bottom: 100rem;
+        /* r */
+        left: 0;
+        transform: translate(5%, 20%);
+
+        font-size: 20rem;
+        line-height: 1.2;
+        color: var(--wc);
+    }
+
+    .main_visual h2 {
+        /* r */
+        position: absolute;
+        bottom: 250rem;
+        left: 0;
+        transform: translate(5%, 0);
+
+        color: var(--wc);
+        text-align: left;
+
+        font-size: 20rem;
+        width: 80%;
+        font-weight: 700;
+        margin: 0;
+    }
+
+    .main_visual .km_num {
+        position: absolute;
+        bottom: 200rem;
+        /* r */
+        left: 0;
+        transform: translate(25%, 0);
+        color: var(--wc);
+        text-align: left;
+    }
+
+    .main_visual .km_num .memberCountCon {
+        /* r */
+        font-size: 40rem;
+
+        font-weight: 600;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    .main_visual span {
+        /* r */
+        position: absolute;
+        bottom: 220rem;
+        left: 230rem;
+        transform: translate(50%, 80%);
+
+        color: var(--wc);
+        font-size: 20rem;
+        font-weight: 700;
+    }
+
+}
 
 
 /* main_content */
@@ -379,6 +579,71 @@
     object-fit: contain;
 }
 
+/* main_content_mobile=============================================================== */
+@media (max-width: 768px) {
+
+    /* r */
+    .main_content {
+        padding: 0;
+    }
+
+    .main_content .content {
+        margin: 0;
+        padding: 0;
+    }
+
+    .main_content .content {
+        display: grid;
+        /* r */
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .main_content .content .story_txt {
+        /* r */
+        margin: 70rem auto;
+
+    }
+
+    .main_content .content .story_txt strong {
+        display: block;
+        /* r */
+        font-size: 28rem;
+        font-weight: 700;
+        line-height: 34rem;
+        margin: 0 0 12rem 0;
+    }
+
+    .main_content .content .story_txt p {
+        /* r */
+        font-size: 15rem;
+        font-weight: 400;
+        line-height: 1.2;
+        margin: 0 0 15rem 0;
+        color: var(--gc);
+    }
+
+    .main_content .content .story_txt span {
+        /* r */
+        display: block;
+        font-size: 14rem;
+        font-weight: 500;
+    }
+
+    .main_content .content .story_txt span a:hover {
+        color: #FFCD00;
+    }
+
+    .main_content .content .story_txt span i {
+        margin: 0 0 0 5px;
+    }
+
+    .main_content .content .story_video video,
+    .main_content .content .story_pic img {
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+    }
+}
 
 
 /* main_banner */
@@ -392,11 +657,11 @@
 .main_banner .banner_tit {
     font-size: 40rem;
     font-weight: 700;
-    width: 550rem;
+    /* width: 550rem; */
     color: var(--wc);
     line-height: 1.4;
-    margin: 0 0 0 230rem;
-    padding: 100rem 0;
+
+    padding: 150rem 0;
 
     word-break: keep-all;
     overflow-wrap: break-word;
@@ -406,7 +671,10 @@
 .main_banner .banner_tit strong {
     color: #FFCD00;
     display: block;
+
+    margin: 0 0 50rem 0;
 }
+
 
 .main_banner span {
     display: block;
@@ -414,12 +682,27 @@
     font-weight: 500;
     color: var(--wc);
 
-    margin: 0 0 0 230rem;
 }
+
+@media (max-width: 768px) {
+    .main_banner span {
+
+        margin: 0;
+    }
+}
+
 
 .main_banner span:hover {
     color: #FFCD00;
 }
+
+
+
+/* main_banner_mobile */
+
+
+
+
 
 
 
@@ -473,6 +756,13 @@
     color: rgba(255, 255, 255, 0.6);
     padding: 70rem 0;
 }
+
+@media (max-width: 768px) {
+    .footer .ft_top {
+        display: none;
+    }
+}
+
 
 .footer .ft_top h3 {
     color: var(--wc);
