@@ -1,5 +1,5 @@
 * {
-    outline: 1px solid tomato;
+    outline: 1px solid tomato--;
 }
 
 
@@ -191,7 +191,7 @@
         /* r */
         flex-direction: column;
         gap: 0;
-        padding: 150rem 20rem 0 20rem;
+        padding: 100rem 20rem 0 20rem;
     }
 
     .gnb .main_menu>li {
@@ -227,8 +227,8 @@
         width: auto;
         text-align: left;
 
-        padding: 15rem 0;
-        border-radius: none;
+        padding: 5rem 0;
+        border-radius: 0;
         border: none;
         box-shadow: none;
 
@@ -589,7 +589,32 @@
 
     .main_content .content {
         margin: 0;
-        padding: 0;
+        padding: 50rem 0;
+    }
+
+    /* r */
+    .main_content .content .itm:nth-child(1) {
+        order: 2;
+    }
+
+    .main_content .content .itm:nth-child(2) {
+        order: 1;
+    }
+
+    .main_content .content .itm:nth-child(3) {
+        order: 3;
+    }
+
+    .main_content .content .itm:nth-child(4) {
+        order: 4;
+    }
+
+    .main_content .content .itm:nth-child(5) {
+        order: 6;
+    }
+
+    .main_content .content .itm:nth-child(6) {
+        order: 5;
     }
 
     .main_content .content {
@@ -698,11 +723,66 @@
 
 
 
-/* main_banner_mobile */
+/* main_banner_mobile ===============================================================*/
+
+@media (max-width: 768px) {
+    .main_banner {
+        /* r */
+        height: 500rem;
+
+        background: url(../images/kakaocars_icon.png) no-repeat bottom right 20%;
+
+        /* r */
+        background-size: 100%;
+
+        background-color: rgb(30, 35, 61);
+    }
+
+    .main_banner .banner_tit {
+        /* r */
+        font-size: 20rem;
+        font-weight: 700;
+        /* width: 550rem; */
+        color: var(--wc);
+        line-height: 1.4;
+        /* r */
+        padding: 100rem 15rem;
+
+        word-break: keep-all;
+        overflow-wrap: break-word;
+
+    }
+
+    .main_banner .banner_tit strong {
+        color: #FFCD00;
+        display: block;
+        /* r */
+        margin: 0 0 20rem 0;
+    }
 
 
+    .main_banner span {
+        display: block;
+        /* r */
+        font-size: 16rem;
+        font-weight: 500;
+        color: var(--wc);
+
+    }
+
+    @media (max-width: 768px) {
+        .main_banner span {
+
+            margin: 0;
+        }
+    }
 
 
+    .main_banner span:hover {
+        color: #FFCD00;
+    }
+
+}
 
 
 
@@ -723,6 +803,9 @@
     top: 250rem;
     left: 230rem;
     color: var(--wc);
+
+    /* r */
+    padding: 0 15rem;
 }
 
 .main_event .banner_tit h3 {
@@ -735,11 +818,58 @@
 .main_event .banner_tit strong {
     display: block;
     margin: 0 0 30rem 0;
+    /* r */
+    word-break: keep-all;
+    line-height: 1.2;
 }
 
 .main_event .banner_tit span {
     display: block;
 }
+
+/* main_event mobile */
+
+@media (max-width: 768px) {
+    .main_event {
+        position: relative;
+    }
+
+    .main_event video {
+        width: 100%;
+        object-fit: cover;
+        vertical-align: middle;
+        /* 먼가 틈이 생길때!! */
+    }
+
+    .main_event .banner_tit {
+        position: absolute;
+        /* r */
+        top: 400rem;
+        left: 0;
+        color: var(--wc);
+    }
+
+    .main_event .banner_tit h3 {
+        /* r */
+        font-size: 25rem;
+        font-weight: 700;
+        line-height: 31rem;
+        margin: 0 0 10rem 0;
+    }
+
+    .main_event .banner_tit strong {
+        display: block;
+        margin: 0 0 10rem 0;
+    }
+
+    .main_event .banner_tit span {
+        display: block;
+        /* r */
+        font-size: 15rem;
+    }
+
+}
+
 
 
 
@@ -757,6 +887,8 @@
     padding: 70rem 0;
 }
 
+
+/* r */
 @media (max-width: 768px) {
     .footer .ft_top {
         display: none;
