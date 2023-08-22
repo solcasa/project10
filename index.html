@@ -4,7 +4,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>김규리10</title>
+
+    <meta property="og:title" content="카카오모빌리티" />
+    <meta name="twitter:title" content="카카오모빌리티" />
+    <meta name="description"
+        content="카카오모빌리티는 ‘스마트모빌리티’를 통해 더 여유 있고 가치 있는 일상을 만들어가겠습니다. 이동 기술과 경험을 선보이며 모든 이동을 위한 모빌리티 서비스를 제공합니다. 승객과 드라이버, 모두의 안전을 위해 노력하며 카카오모빌리티와 함께 나아갈 분들을 찾습니다." />
+    <meta property="og:description"
+        content="카카오모빌리티는 ‘스마트모빌리티’를 통해 더 여유 있고 가치 있는 일상을 만들어가겠습니다. 이동 기술과 경험을 선보이며 모든 이동을 위한 모빌리티 서비스를 제공합니다. 승객과 드라이버, 모두의 안전을 위해 노력하며 카카오모빌리티와 함께 나아갈 분들을 찾습니다." />
+    <meta name="twitter:description"
+        content="카카오모빌리티는 ‘스마트모빌리티’를 통해 더 여유 있고 가치 있는 일상을 만들어가겠습니다. 이동 기술과 경험을 선보이며 모든 이동을 위한 모빌리티 서비스를 제공합니다. 승객과 드라이버, 모두의 안전을 위해 노력하며 카카오모빌리티와 함께 나아갈 분들을 찾습니다." />
+    <meta property="og:url" content="https://solcasa.github.io/project10/" />
+    <meta name="twitter:url" content="https://solcasa.github.io/project10/" />
+
+    <title>kakaomobility</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon-16x16.png" />
+
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/aos.css">
@@ -79,13 +93,13 @@
             <section class="main_visual">
                 <video src="./images/main_video.mp4" autoplay muted loop class="main_pc_v"></video>
                 <video src="./images/main_video_mobile.mp4" autoplay muted loop class="main_mobile_v"></video>
-                <div class="slogan">
+                <div class="slogan inner">
                     <div data-aos="fade-up" data-aos-duration="2000">we</div>
                     <div data-aos="fade-up" data-aos-duration="2000" data-aos-delay="500">move</div>
                     <div data-aos="fade-up" data-aos-duration="2000" data-aos-delay="1000">life</div>
                 </div>
-                <p>우리의 기술로 생활을 움직입니다.</p>
-                <h2>오늘 하루의 누적 이동거리</h2>
+                <p class="pg inner">우리의 기술로 생활을 움직입니다.</p>
+                <h2 class="today_km inner">오늘 하루의 누적 이동거리</h2>
                 <div class="km_num">
                     <strong class="memberCountCon">97277249</strong>
                 </div>
@@ -147,7 +161,7 @@
             <!-- sc_03 -->
             <section class="main_event">
                 <video src="./images/tail_video.mp4" height="700" width="1244" autoplay muted loop></video>
-                <div class="banner_tit">
+                <div class="banner_tit inner">
                     <h3>카카오모빌리티와<br />
                         함께 나아갈 분들을 찾습니다.</h3>
                     <strong>드라이버와 승객 모두가 행복한 이동이 될 수 있도록 카카오모빌리티와 동행할 분을
@@ -157,6 +171,7 @@
 
             </section>
         </main>
+
         <!-- footer -->
         <footer class="footer">
             <div class="inner ft_wrap">
@@ -222,6 +237,7 @@
             </div>
         </footer>
     </div>
+
     <script>
         AOS.init();
     </script>
