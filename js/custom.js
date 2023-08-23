@@ -5,7 +5,6 @@ $(function () {
         sct > 0
             ? $('.header').addClass('on')
             : $('.header').removeClass('on');
-
     });
 
     var memberCountConTxt = 97277249;
@@ -42,7 +41,6 @@ $(function () {
 
     $(window).on('resize', function () {
         $('.gnb .sub_menu').removeAttr('style');
-
     });
 
 

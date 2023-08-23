@@ -1,5 +1,5 @@
 * {
-    outline: 1px solid tomato;
+    outline: 1px solid tomato-;
 }
 
 :root {
@@ -164,14 +164,11 @@
         right: 15rem;
         width: 30rem;
         height: 30rem;
-
-        z-index: 1000;
     }
 
     .header.on .mobile_btn {
         background: var(--bc);
         border-radius: 2px;
-        z-index: 1000;
     }
 
     .mobile_btn::before {
@@ -245,12 +242,12 @@
         position: fixed;
         inset: 0 100% 0 auto;
         background: var(--wc);
-        width: 100%;
+        width: 80%;
         transition: 0.5s;
     }
 
     .gnb.on {
-        inset: 0 0 0 auto;
+        inset: 0 auto 0 0;
     }
 
     .gnb .main_menu {
@@ -258,12 +255,12 @@
         /* r */
         flex-direction: column;
         gap: 0;
-        padding: 100rem 20rem 0 20rem;
+        padding: 150rem 20rem 0 20rem;
     }
 
     .gnb .main_menu>li {
         position: relative;
-        padding: 0 30rem;
+        padding: 0;
         /* r */
         border-bottom: 1px solid #ddd;
         line-height: 40rem;
@@ -276,8 +273,6 @@
         white-space: nowrap;
     }
 
-
-
     .header .gnb.on .main_menu a {
         color: #000000;
     }
@@ -288,26 +283,23 @@
     }
 
     .gnb .main_menu .sub_menu {
-        /* r */
-        /* position: absolute; */
         position: static;
-        padding: 0 0 0 0;
+        display: none;
 
+        padding: 5rem 10rem;
         top: 0;
         left: 0;
         transform: translate(0, 0);
-        background: var(--wc);
+        background: #f9f9f9;
         width: auto;
         text-align: left;
 
-        padding: 5rem 0;
         border-radius: 0;
         border: none;
         box-shadow: none;
 
         opacity: 1;
         visibility: visible;
-
         transition: none;
     }
 
@@ -322,7 +314,7 @@
     }
 
     .gnb .sub_menu li~li {
-        border-top: 1px solid var(--lc);
+        border-bottom: 1px solid var(--lc);
     }
 
     .header .gnb .sub_menu a {
@@ -331,8 +323,6 @@
         font-size: 14rem;
         line-height: 40rem;
     }
-
-
 }
 
 
@@ -425,9 +415,6 @@
     .main_visual {
         position: relative;
         height: 100vh;
-
-        /* r */
-        min-height: 216.4vw;
     }
 
     .main_visual .main_pc_v {
@@ -438,7 +425,6 @@
     .main_visual .main_mobile_v {
         /* r */
         display: block;
-
         position: absolute;
         height: 100%;
         width: 46.21vh;
@@ -448,7 +434,7 @@
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
-        margin: 0px;
+        margin: 0;
     }
 
     .main_visual .slogan {
@@ -464,30 +450,29 @@
         font-family: 'Montserrat', sans-serif;
     }
 
-    .main_visual p {
+    .main_visual .pg {
         position: absolute;
         bottom: 100rem;
         /* r */
         left: 0;
-        transform: translate(5%, 20%);
+        transform: translate(0, 0);
 
         font-size: 20rem;
         line-height: 1.2;
         color: var(--wc);
     }
 
-    .main_visual h2 {
+    .main_visual .today_km {
         /* r */
         position: absolute;
         bottom: 250rem;
         left: 0;
-        transform: translate(5%, 0);
+        transform: translate(0, 0);
 
         color: var(--wc);
         text-align: left;
 
         font-size: 20rem;
-        width: 80%;
         font-weight: 700;
         margin: 0;
     }
@@ -497,7 +482,7 @@
         bottom: 200rem;
         /* r */
         left: 0;
-        transform: translate(25%, 0);
+        transform: translate(15rem, 0);
         color: var(--wc);
         text-align: left;
     }
@@ -521,7 +506,6 @@
         font-size: 20rem;
         font-weight: 700;
     }
-
 }
 
 
@@ -572,6 +556,7 @@
     object-fit: contain;
 }
 
+
 /* main_content_mobile */
 @media (max-width: 768px) {
 
@@ -582,7 +567,7 @@
 
     .main_content .content {
         margin: 0;
-        padding: 50rem 0;
+        padding: 80rem 0 40rem 0;
     }
 
     /* r */
@@ -619,7 +604,6 @@
     .main_content .content .story_txt {
         /* r */
         margin: 70rem auto;
-
     }
 
     .main_content .content .story_txt strong {
@@ -703,22 +687,11 @@
 
 /* main_banner_mobile */
 @media (max-width: 768px) {
-    .main_banner span {
-
-        margin: 0;
-    }
-}
-
-@media (max-width: 768px) {
     .main_banner {
         /* r */
         height: 500rem;
-
         background: url(../images/kakaocars_icon.png) no-repeat bottom right 20%;
-
-        /* r */
         background-size: 100%;
-
         background-color: rgb(30, 35, 61);
     }
 
@@ -726,7 +699,6 @@
         /* r */
         font-size: 20rem;
         font-weight: 700;
-        /* width: 550rem; */
         color: var(--wc);
         line-height: 1.4;
         /* r */
@@ -734,7 +706,6 @@
 
         word-break: keep-all;
         overflow-wrap: break-word;
-
     }
 
     .main_banner .banner_tit strong {
@@ -744,30 +715,18 @@
         margin: 0 0 20rem 0;
     }
 
-
     .main_banner span {
         display: block;
         /* r */
         font-size: 16rem;
         font-weight: 500;
         color: var(--wc);
-
     }
-
-    @media (max-width: 768px) {
-        .main_banner span {
-
-            margin: 0;
-        }
-    }
-
 
     .main_banner span:hover {
         color: #FFCD00;
     }
-
 }
-
 
 
 /* main_event */
@@ -805,8 +764,8 @@
     display: block;
 }
 
-/* main_event_mobile*/
 
+/* main_event_mobile*/
 @media (max-width: 768px) {
     .main_event {
         position: relative;
@@ -816,7 +775,6 @@
         width: 100%;
         object-fit: cover;
         vertical-align: middle;
-        /* 먼가 틈이 생길때!! */
     }
 
     .main_event .banner_tit {
@@ -831,13 +789,15 @@
         /* r */
         font-size: 25rem;
         font-weight: 700;
-        line-height: 31rem;
+        line-height: 1.4;
         margin: 0 0 10rem 0;
     }
 
     .main_event .banner_tit strong {
         display: block;
         margin: 0 0 10rem 0;
+        word-break: keep-all;
+        line-height: 1.4;
     }
 
     .main_event .banner_tit span {
@@ -847,8 +807,6 @@
     }
 
 }
-
-
 
 
 /* footer */
@@ -888,7 +846,7 @@
     padding: 30rem;
 }
 
-/* r */
+/* footer_mobile */
 @media (max-width: 768px) {
     .footer .ft_top {
         display: none;
